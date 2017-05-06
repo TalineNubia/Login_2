@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DE08375-8CF0-4309-B1A3-3BB83791E5B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Login</RootNamespace>
+    <AssemblyName>Login</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadProprietario.cs" />
+    <Compile Include="CadastroResidencia.cs" />
+    <Compile Include="CadCondômino.cs" />
+    <Compile Include="CadBanco.cs" />
+    <Compile Include="CadDespesa.cs" />
+    <Compile Include="CadFornecedor.cs" />
+    <Compile Include="CadFuncionario.cs" />
+    <Compile Include="Morador.cs" />
+    <Compile Include="Pedido.cs" />
+    <Compile Include="DadosFuncionario.cs" />
+    <Compile Include="LancarFuncionario.cs" />
+    <Compile Include="ContasAPagar.cs" />
+    <Compile Include="view\FrmCadBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadBanco.Designer.cs">
+      <DependentUpon>FrmCadBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadCondominios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadCondominios.Designer.cs">
+      <DependentUpon>FrmCadCondominios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadCondômino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadCondômino.Designer.cs">
+      <DependentUpon>FrmCadCondômino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadDespesa.Designer.cs">
+      <DependentUpon>FrmCadDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadFornecedores.Designer.cs">
+      <DependentUpon>FrmCadFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadFuncionario.Designer.cs">
+      <DependentUpon>FrmCadFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadMaisMorador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadMaisMorador.Designer.cs">
+      <DependentUpon>FrmCadMaisMorador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadPedidos.Designer.cs">
+      <DependentUpon>FrmCadPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadProprietarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadProprietarios.Designer.cs">
+      <DependentUpon>FrmCadProprietarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmCadResidencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadResidencias.Designer.cs">
+      <DependentUpon>FrmCadResidencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaBanco.Designer.cs">
+      <DependentUpon>FrmConsultaBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaCondominios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaCondominios.Designer.cs">
+      <DependentUpon>FrmConsultaCondominios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaCondômino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaCondômino.Designer.cs">
+      <DependentUpon>FrmConsultaCondômino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaDespesa.Designer.cs">
+      <DependentUpon>FrmConsultaDespesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaFornecedor.Designer.cs">
+      <DependentUpon>FrmConsultaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaFuncionario.Designer.cs">
+      <DependentUpon>FrmConsultaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaMensalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaMensalidade.Designer.cs">
+      <DependentUpon>FrmConsultaMensalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaParFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaParFornecedor.Designer.cs">
+      <DependentUpon>FrmConsultaParFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaPedido.Designer.cs">
+      <DependentUpon>FrmConsultaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaProprietario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaProprietario.Designer.cs">
+      <DependentUpon>FrmConsultaProprietario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultarBalancete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultarBalancete.Designer.cs">
+      <DependentUpon>FrmConsultarBalancete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmConsultaResidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmConsultaResidencia.Designer.cs">
+      <DependentUpon>FrmConsultaResidencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmDadosFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmDadosFuncionario.Designer.cs">
+      <DependentUpon>FrmDadosFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmBaixarContasAPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmBaixarContasAPagar.Designer.cs">
+      <DependentUpon>FrmBaixarContasAPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmHelp.Designer.cs">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmHelp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmHelp2.Designer.cs">
+      <DependentUpon>FrmHelp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmLancaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmLancaFuncionario.Designer.cs">
+      <DependentUpon>FrmLancaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmLancarContasAPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmLancarContasAPagar.Designer.cs">
+      <DependentUpon>FrmLancarContasAPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmLancarMensalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmLancarMensalidade.Designer.cs">
+      <DependentUpon>FrmLancarMensalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mensagem.cs" />
+    <Compile Include="CadastroCondominio.cs" />
+    <Compile Include="view\FrmTelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmTelaPrincipal.Designer.cs">
+      <DependentUpon>FrmTelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\FrmCadBanco.resx">
+      <DependentUpon>FrmCadBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadCondominios.resx">
+      <DependentUpon>FrmCadCondominios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadCondômino.resx">
+      <DependentUpon>FrmCadCondômino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadDespesa.resx">
+      <DependentUpon>FrmCadDespesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadFornecedores.resx">
+      <DependentUpon>FrmCadFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadFuncionario.resx">
+      <DependentUpon>FrmCadFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadMaisMorador.resx">
+      <DependentUpon>FrmCadMaisMorador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadPedidos.resx">
+      <DependentUpon>FrmCadPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadProprietarios.resx">
+      <DependentUpon>FrmCadProprietarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadResidencias.resx">
+      <DependentUpon>FrmCadResidencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaBanco.resx">
+      <DependentUpon>FrmConsultaBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaCondominios.resx">
+      <DependentUpon>FrmConsultaCondominios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaCondômino.resx">
+      <DependentUpon>FrmConsultaCondômino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaDespesa.resx">
+      <DependentUpon>FrmConsultaDespesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaFornecedor.resx">
+      <DependentUpon>FrmConsultaFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaFuncionario.resx">
+      <DependentUpon>FrmConsultaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaMensalidade.resx">
+      <DependentUpon>FrmConsultaMensalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaParFornecedor.resx">
+      <DependentUpon>FrmConsultaParFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaPedido.resx">
+      <DependentUpon>FrmConsultaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaProprietario.resx">
+      <DependentUpon>FrmConsultaProprietario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultarBalancete.resx">
+      <DependentUpon>FrmConsultarBalancete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmConsultaResidencia.resx">
+      <DependentUpon>FrmConsultaResidencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmDadosFuncionario.resx">
+      <DependentUpon>FrmDadosFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmBaixarContasAPagar.resx">
+      <DependentUpon>FrmBaixarContasAPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmHelp.resx">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmHelp2.resx">
+      <DependentUpon>FrmHelp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmLancaFuncionario.resx">
+      <DependentUpon>FrmLancaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmLancarContasAPagar.resx">
+      <DependentUpon>FrmLancarContasAPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmLancarMensalidade.resx">
+      <DependentUpon>FrmLancarMensalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="view\FrmTelaPrincipal.af-ZA.resx">
+      <DependentUpon>FrmTelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmTelaPrincipal.resx">
+      <DependentUpon>FrmTelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online-Customer-Support-Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
