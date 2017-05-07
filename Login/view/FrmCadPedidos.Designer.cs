@@ -212,7 +212,7 @@
             "Apart. 18",
             "Apart. 19",
             "Apart. 20"});
-            this.cbUnidade.Location = new System.Drawing.Point(519, 108);
+            this.cbUnidade.Location = new System.Drawing.Point(522, 109);
             this.cbUnidade.Name = "cbUnidade";
             this.cbUnidade.Size = new System.Drawing.Size(252, 24);
             this.cbUnidade.TabIndex = 5;
