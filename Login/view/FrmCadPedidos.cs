@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Login.view
 {
@@ -50,7 +51,59 @@ namespace Login.view
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            Pedido cadastro = new Pedido();
+
+
+            string str = @"server=localhost; userid = root; database=bdcondominio";
+            MySqlConnection conexao = null;
+            try
+            {
+                
+                string inserir = "INSERT INTO pedido" 
+                    +"(nome, datapedido,condominio,unidade,prioridade,fone,pedido,resposta)"
+                    + "values (@nome,@datapedido,@condominio,@unidade,@prioridade,@fone,@pedido,@resposta);";
+                conexao = new MySqlConnection(str);
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(inserir, conexao);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@nome", txtnNome.Text);
+                cmd.Parameters.AddWithValue("@datapedido", txtnDataPedido.Text);
+                cmd.Parameters.AddWithValue("@condominio", cbCondominio.Text);
+                cmd.Parameters.AddWithValue("@unidade", cbUnidade.Text);
+                cmd.Parameters.AddWithValue("@prioridade", cbPrioridade.Text);
+                cmd.Parameters.AddWithValue("@fone", txtnFone.Text);
+                cmd.Parameters.AddWithValue("@pedido", txtnPedido.Text);
+                cmd.Parameters.AddWithValue("@resposta", txtnResposta.Text);
+                
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Ocorrencia adicionado com sucesso");
+                txtnNome.Text = "";
+                txtnDataPedido.Text = "";
+                cbCondominio.Text = "";
+                cbUnidade.Text = "";
+                cbPrioridade.Text = "";
+                txtnFone.Text = "";
+                txtnPedido.Text = "";
+                txtnResposta.Text = "";
+
+            } catch (Exception ex)
+            {
+
+                MessageBox.Show("Error:" + ex.ToString());
+
+            }
+            finally
+            {
+
+                if (conexao != null)
+                {
+                    conexao.Close();
+                }
+
+            }
+
+           /* Pedido cadastro = new Pedido();
 
             cadastro.Codigo = (txtnCOD.Text);
             cadastro.Nome = (txtnNome.Text);
@@ -81,7 +134,7 @@ namespace Login.view
             incrementar = incremento.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
 
-
+    */
         }
 
         private void btAnterior_Click(object sender, EventArgs e)
@@ -254,9 +307,10 @@ namespace Login.view
 
         private void FrmCadPedidos_Load(object sender, EventArgs e)
         {
-            Pedido cadPedido = new Pedido();
+           /* Pedido cadPedido = new Pedido();
             incrementar = cadPedido.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
+            */
         }
     }
 }

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\PedidoDao.cs" />
     <Compile Include="model\CadProprietario.cs" />
     <Compile Include="model\CadastroResidencia.cs" />
     <Compile Include="model\CadCondômino.cs" />
