@@ -58,7 +58,7 @@ namespace Login.view
             //Definição do dataset
             bdDataSet = new DataSet();
             //Define string de conexão
-            bdConn = new MySqlConnection("server = localhost; database = teste; uid = root; pwd =””");
+            bdConn = new MySqlConnection("server = localhost; database = bdcondominio; uid = root; pwd=''");
 
             // string str = @"server=localhost; userid = root; database=bdcondominio";
 
@@ -77,6 +77,8 @@ namespace Login.view
             {
                 //Se estiver aberta insere os dados na BD
                 MySqlCommand commS = new MySqlCommand("INSERT INTO pedido (nome, datapedido,condominio,unidade,prioridade,fone,pedido,respost)VALUES('',\\'" + txtnNome.Text + "\\',\\'" + txtnDataPedido.Text + "\\',\\'" + cbCondominio.Text + "\\',\\'" + cbUnidade.Text + "\\',\\'" + cbPrioridade.Text + "\\',\\'" + txtnFone.Text + "\\',\\'" + txtnPedido.Text + "\\',\\'" + txtnResposta.Text + "\\')", bdConn);
+                commS.BeginExecuteNonQuery();
+
             }
 
 
