@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login.view;
-
+using Login.model;
 
 namespace Login.view
 {
-    public class CadastroCondominio
+    public class CadastroCondominio : Endereco
     {
         private string codigo;
         private string nome;
@@ -17,77 +17,44 @@ namespace Login.view
         private string fone;
         private string cnpj;
         private string ie;
-        private string cep;
-        private string municipio;
-        private string endereço;
-        private string bairro;
-        private string numero;
         private string registroMatricial;
         private string registroPredial;
-        private string uf;
         
 
-        public string Codigo_condominio
+
+
+        public string Codigo
         {
             get { return codigo; }
             set { codigo = value; }
         }
-        public string Nome_condominio
+        public string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
-        public string Email_condominio
+        public string Email
         {
             get { return email; }
             set { email = value; }
         }
-        public string Fone_condominio
+        public string Fone
         {
             get { return fone; }
             set { fone = value; }
         }
-        public string Cnpj_condominio
+        public string Cnpj
         {
             get { return cnpj; }
             set { cnpj = value; }
         }
-        public string Ie_condominio
+        public string Ie
         {
             get { return ie; }
             set { ie = value; }
         }
-        public string Cep_condominio
-        {
-            get { return cep; }
-            set { cep = value; }
-        }
-        public string Municipio_condominio
-        {
-            get { return municipio; }
-            set { municipio = value; }
-        }
-        public string Endereço_condominio
-        {
-            get { return endereço; }
-            set { endereço = value; }
-        }
-        public string Numero_condominio
-        {
-            get { return numero; }
-            set { numero = value; }
-        }
-        public string Bairro_condominio
-        {
-            get { return bairro; }
-            set { bairro = value; }
-        }
-        public string Uf_condominio
-        {
-            get { return uf; }
-            set { uf = value; }
-        }
-        public string RegistroMatricial_condominio
+       
+        public string RegistroMatricial
         {
             get { return registroMatricial; }
             set { registroMatricial = value; }

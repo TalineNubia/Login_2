@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login.view;
+using Login.model;
 
 namespace Login.view
 {
@@ -42,7 +43,10 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-            
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+
+            txtnCod1.Focus();
 
 
 
@@ -51,20 +55,10 @@ namespace Login.view
         private void btNovoCadastro_Click(object sender, EventArgs e)
         {
 
-            txtnCod1.Clear();
-            txtnCod2.Clear();
-            txtnCod3.Clear();
-            txtnNomeResidencia1.Clear();
-            txtnNomeResidencia2.Clear();
-            txtnNomeResidencia3.Clear();
-            txtnBloco1.Clear();
-            txtnBloco2.Clear();
-            txtnBloco3.Clear();
-            txtnAreaTotalConstruida.Clear();
-            txtnAreaTotalTerreno.Clear();
-            txtnFraçãoIdeal.Clear();
-            cbCondominio.Focus();
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
 
+            txtnCod1.Focus();
 
 
         }
@@ -270,6 +264,11 @@ namespace Login.view
         }
 
         private void txtnFraçãoIdeal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

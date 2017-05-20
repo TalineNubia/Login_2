@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,7 @@ namespace Login.view
             CadFornecedor1.Observação = (txtnObs.Text);
             CadFornecedor1.Despesa = (cbDespesas.Text);
             CadFornecedor1.Status = (cbStatus.Text);
+            
 
 
             listaCadFornecedor.Add(CadFornecedor1);
@@ -53,24 +55,9 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-
-            txtnCOD.Clear();
-            txtnNome.Clear();
-            txtnCNPJ.Clear();
-            txtnIE.Clear();
-            txtnEmail.Clear();
-            txtnFone1.Clear();
-            txtnFone.Clear();
-            txtnEndereco.Clear();
-            txtnNumero.Clear();
-            txtnMunicipio.Clear();
-            txtnCEP.Clear();
-            txtnBairro.Clear();
-            cbStatus.Text = "";
-            cbDespesas.Text = "";
-            txtnObs.Clear();
-            txtnWebSite.Clear();
-            cbUF.Text = "";
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+            txtnNome.Focus();
 
             txtnNome.Focus();
 
@@ -130,24 +117,8 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnNome.Clear();
-                txtnCNPJ.Clear();
-                txtnIE.Clear();
-                txtnEmail.Clear();
-                txtnFone1.Clear();
-                txtnFone.Clear();
-                txtnEndereco.Clear();
-                txtnNumero.Clear();
-                txtnMunicipio.Clear();
-                txtnCEP.Clear();
-                txtnBairro.Clear();
-                cbStatus.Text = "";
-                cbDespesas.Text = "";
-                txtnObs.Clear();
-                txtnWebSite.Clear();
-                cbUF.Text = "";
-
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
                 txtnNome.Focus();
 
             }
@@ -161,13 +132,15 @@ namespace Login.view
                 txtnEmail.Text = listaCadFornecedor[ponteiro].Email;
                 txtnObs.Text = listaCadFornecedor[ponteiro].Observação;
                 txtnCEP.Text = listaCadFornecedor[ponteiro].Cep;
+                txtnEndereco.Text = listaCadFornecedor[ponteiro].Endereço;
                 txtnMunicipio.Text = listaCadFornecedor[ponteiro].Municipio;
                 cbUF.Text = listaCadFornecedor[ponteiro].Uf;
                 txtnBairro.Text = listaCadFornecedor[ponteiro].Bairro;
                 cbDespesas.Text = listaCadFornecedor[ponteiro].Despesa;
                 cbStatus.Text = listaCadFornecedor[ponteiro].Status;
-                cbUF.Text = listaCadFornecedor[ponteiro].Status;
+                cbUF.Text = listaCadFornecedor[ponteiro].Uf;
                 txtnComplemento.Text = listaCadFornecedor[ponteiro].Complemento;
+                
 
 
 
@@ -386,6 +359,16 @@ namespace Login.view
 
             incrementar = cadFornecedor.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -58,13 +58,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbEmiteBoleto = new System.Windows.Forms.ComboBox();
             this.txtnCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtnData = new System.Windows.Forms.MaskedTextBox();
             this.txtnLançaRemessa = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtnRecuperaRemessa = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.clbAtivoInativo = new System.Windows.Forms.CheckedListBox();
+            this.txtnOperacao = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +85,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(545, 210);
+            this.label15.Location = new System.Drawing.Point(474, 213);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 20);
             this.label15.TabIndex = 89;
@@ -143,9 +145,9 @@
             // 
             this.txtnAgencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnAgencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnAgencia.Location = new System.Drawing.Point(419, 210);
+            this.txtnAgencia.Location = new System.Drawing.Point(386, 211);
             this.txtnAgencia.Name = "txtnAgencia";
-            this.txtnAgencia.Size = new System.Drawing.Size(120, 22);
+            this.txtnAgencia.Size = new System.Drawing.Size(85, 22);
             this.txtnAgencia.TabIndex = 7;
             this.txtnAgencia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnAgencia_KeyDown);
             // 
@@ -153,9 +155,9 @@
             // 
             this.txtnBanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnBanco.Location = new System.Drawing.Point(140, 212);
+            this.txtnBanco.Location = new System.Drawing.Point(139, 212);
             this.txtnBanco.Name = "txtnBanco";
-            this.txtnBanco.Size = new System.Drawing.Size(188, 22);
+            this.txtnBanco.Size = new System.Drawing.Size(170, 22);
             this.txtnBanco.TabIndex = 6;
             this.txtnBanco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnBanco_KeyDown);
             // 
@@ -163,7 +165,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(346, 212);
+            this.label3.Location = new System.Drawing.Point(316, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 20);
             this.label3.TabIndex = 84;
@@ -196,7 +198,7 @@
             this.txtnRazãoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnRazãoSocial.Location = new System.Drawing.Point(372, 82);
             this.txtnRazãoSocial.Name = "txtnRazãoSocial";
-            this.txtnRazãoSocial.Size = new System.Drawing.Size(384, 22);
+            this.txtnRazãoSocial.Size = new System.Drawing.Size(423, 22);
             this.txtnRazãoSocial.TabIndex = 2;
             this.txtnRazãoSocial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnRazãoSocial_KeyDown);
             // 
@@ -313,9 +315,9 @@
             // 
             this.txtnConta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnConta.Location = new System.Drawing.Point(603, 209);
+            this.txtnConta.Location = new System.Drawing.Point(533, 213);
             this.txtnConta.Name = "txtnConta";
-            this.txtnConta.Size = new System.Drawing.Size(153, 22);
+            this.txtnConta.Size = new System.Drawing.Size(101, 22);
             this.txtnConta.TabIndex = 8;
             this.txtnConta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnConta_KeyDown);
             // 
@@ -323,7 +325,7 @@
             // 
             this.txtnNossoNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnNossoNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnNossoNumero.Location = new System.Drawing.Point(437, 255);
+            this.txtnNossoNumero.Location = new System.Drawing.Point(419, 256);
             this.txtnNossoNumero.Name = "txtnNossoNumero";
             this.txtnNossoNumero.Size = new System.Drawing.Size(192, 22);
             this.txtnNossoNumero.TabIndex = 10;
@@ -333,7 +335,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(346, 259);
+            this.label7.Location = new System.Drawing.Point(339, 257);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 20);
             this.label7.TabIndex = 121;
@@ -371,27 +373,6 @@
             this.txtnCNPJ.Size = new System.Drawing.Size(188, 22);
             this.txtnCNPJ.TabIndex = 4;
             this.txtnCNPJ.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnCNPJ_KeyDown_1);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(43, 303);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 20);
-            this.label10.TabIndex = 126;
-            this.label10.Text = "Data  Vencimento";
-            // 
-            // txtnData
-            // 
-            this.txtnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnData.Location = new System.Drawing.Point(182, 301);
-            this.txtnData.Mask = "00/00/0000";
-            this.txtnData.Name = "txtnData";
-            this.txtnData.Size = new System.Drawing.Size(115, 22);
-            this.txtnData.TabIndex = 11;
-            this.txtnData.ValidatingType = typeof(System.DateTime);
-            this.txtnData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnData_KeyDown);
             // 
             // txtnLançaRemessa
             // 
@@ -438,12 +419,55 @@
             this.groupBox2.Controls.Add(this.txtnLançaRemessa);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(339, 301);
+            this.groupBox2.Location = new System.Drawing.Point(49, 298);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(462, 88);
             this.groupBox2.TabIndex = 131;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configuração de Diretorio";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(695, 115);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 20);
+            this.label13.TabIndex = 133;
+            this.label13.Text = "Cadastro";
+            // 
+            // clbAtivoInativo
+            // 
+            this.clbAtivoInativo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.clbAtivoInativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbAtivoInativo.FormattingEnabled = true;
+            this.clbAtivoInativo.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.clbAtivoInativo.Location = new System.Drawing.Point(675, 138);
+            this.clbAtivoInativo.Name = "clbAtivoInativo";
+            this.clbAtivoInativo.Size = new System.Drawing.Size(120, 46);
+            this.clbAtivoInativo.TabIndex = 132;
+            // 
+            // txtnOperacao
+            // 
+            this.txtnOperacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtnOperacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnOperacao.Location = new System.Drawing.Point(724, 213);
+            this.txtnOperacao.Name = "txtnOperacao";
+            this.txtnOperacao.Size = new System.Drawing.Size(63, 22);
+            this.txtnOperacao.TabIndex = 134;
+            this.txtnOperacao.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(637, 214);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 20);
+            this.label10.TabIndex = 135;
+            this.label10.Text = "Operação";
             // 
             // FrmCadBanco
             // 
@@ -451,9 +475,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 462);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtnData);
+            this.Controls.Add(this.txtnOperacao);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.clbAtivoInativo);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtnCNPJ);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbEmiteBoleto);
@@ -527,13 +553,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbEmiteBoleto;
         private System.Windows.Forms.MaskedTextBox txtnCNPJ;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MaskedTextBox txtnData;
         private System.Windows.Forms.Button btConsultar;
         private System.Windows.Forms.TextBox txtnLançaRemessa;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtnRecuperaRemessa;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckedListBox clbAtivoInativo;
+        private System.Windows.Forms.TextBox txtnOperacao;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -75,6 +75,8 @@
             this.txtnDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtnCPF = new System.Windows.Forms.MaskedTextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.clbAtivoInativo = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,7 +130,7 @@
             this.txtnCEP.Location = new System.Drawing.Point(72, 206);
             this.txtnCEP.Mask = "00000-000";
             this.txtnCEP.Name = "txtnCEP";
-            this.txtnCEP.Size = new System.Drawing.Size(121, 22);
+            this.txtnCEP.Size = new System.Drawing.Size(102, 22);
             this.txtnCEP.TabIndex = 10;
             this.txtnCEP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnCEP_KeyDown);
             // 
@@ -182,9 +184,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 20);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 151;
-            this.label3.Text = "CPF";
+            this.label3.Text = "CPF *";
             // 
             // btNovo
             // 
@@ -219,7 +221,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(597, 210);
+            this.label12.Location = new System.Drawing.Point(557, 210);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(28, 18);
             this.label12.TabIndex = 147;
@@ -257,7 +259,7 @@
             "SP",
             "SE",
             "TO"});
-            this.cbUF.Location = new System.Drawing.Point(627, 208);
+            this.cbUF.Location = new System.Drawing.Point(587, 208);
             this.cbUF.Name = "cbUF";
             this.cbUF.Size = new System.Drawing.Size(53, 24);
             this.cbUF.TabIndex = 12;
@@ -287,9 +289,9 @@
             // 
             this.txtnMunicipio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnMunicipio.Location = new System.Drawing.Point(279, 206);
+            this.txtnMunicipio.Location = new System.Drawing.Point(265, 206);
             this.txtnMunicipio.Name = "txtnMunicipio";
-            this.txtnMunicipio.Size = new System.Drawing.Size(298, 22);
+            this.txtnMunicipio.Size = new System.Drawing.Size(286, 22);
             this.txtnMunicipio.TabIndex = 11;
             this.txtnMunicipio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnMunicipio_KeyDown);
             // 
@@ -317,9 +319,9 @@
             // 
             this.txtnNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnNome.Location = new System.Drawing.Point(264, 93);
+            this.txtnNome.Location = new System.Drawing.Point(265, 93);
             this.txtnNome.Name = "txtnNome";
-            this.txtnNome.Size = new System.Drawing.Size(526, 22);
+            this.txtnNome.Size = new System.Drawing.Size(525, 22);
             this.txtnNome.TabIndex = 2;
             this.txtnNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnNome_KeyDown);
             // 
@@ -337,7 +339,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(199, 207);
+            this.label7.Location = new System.Drawing.Point(185, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 20);
             this.label7.TabIndex = 145;
@@ -369,9 +371,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(209, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 141;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Nome *";
             // 
             // label1
             // 
@@ -532,8 +534,8 @@
             this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
-            "FEMININO",
-            "MASCULINO"});
+            "F",
+            "M"});
             this.cbSexo.Location = new System.Drawing.Point(442, 131);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(125, 24);
@@ -601,12 +603,37 @@
             this.txtnCPF.TabIndex = 3;
             this.txtnCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnCPF_KeyDown);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(688, 205);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(74, 20);
+            this.label20.TabIndex = 224;
+            this.label20.Text = "Cadastro";
+            // 
+            // clbAtivoInativo
+            // 
+            this.clbAtivoInativo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.clbAtivoInativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbAtivoInativo.FormattingEnabled = true;
+            this.clbAtivoInativo.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
+            this.clbAtivoInativo.Location = new System.Drawing.Point(670, 230);
+            this.clbAtivoInativo.Name = "clbAtivoInativo";
+            this.clbAtivoInativo.Size = new System.Drawing.Size(113, 46);
+            this.clbAtivoInativo.TabIndex = 223;
+            // 
             // FrmCadFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 462);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.clbAtivoInativo);
             this.Controls.Add(this.txtnCPF);
             this.Controls.Add(this.txtnDataNasc);
             this.Controls.Add(this.label11);
@@ -711,5 +738,7 @@
         private System.Windows.Forms.MaskedTextBox txtnDataNasc;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox txtnCPF;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.CheckedListBox clbAtivoInativo;
     }
 }

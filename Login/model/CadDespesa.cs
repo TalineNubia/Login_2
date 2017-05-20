@@ -13,6 +13,7 @@ namespace Login
         private String tipoDespesa;
         private String valorDespesa;
         private String observacao;
+        private String condominio;
         
 
 
@@ -44,6 +45,13 @@ namespace Login
             get { return observacao; }
             set { observacao = value; }
         }
+
+        public string Condominio
+        {
+            get { return condominio; }
+            set { condominio = value; }
+        }
+
         public int autoIncremento(int incremento)
         {
             return ++incremento;

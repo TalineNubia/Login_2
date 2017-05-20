@@ -12,7 +12,6 @@ namespace Login
         private String nome;
         private String despesa;
         private String condominio;
-        private String codigoVd;
         private String refenteMes2;
         private String valor;
         private String referenteMes;
@@ -46,12 +45,6 @@ namespace Login
             get { return condominio; }
             set { condominio = value; }
 
-        }
-
-        public string CodigoVd
-        {
-            get { return codigoVd; }
-            set { codigoVd = value; }
         }
 
         public string ReferenteMes2

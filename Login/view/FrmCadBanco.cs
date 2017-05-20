@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,7 +133,7 @@ namespace Login.view
         {
             if (e.KeyCode == Keys.Return)
             {
-                txtnData.Focus();
+                
 
             }
         }
@@ -150,7 +151,6 @@ namespace Login.view
             cadastroBanco1.Conta = (txtnConta.Text);
             cadastroBanco1.EmiteBoleto = (cbEmiteBoleto.Text);
             cadastroBanco1.NossoNumero = (txtnNossoNumero.Text);
-            cadastroBanco1.DataVencimento = (txtnData.Text);
             cadastroBanco1.LançaRmessa = (txtnLançaRemessa.Text);
             cadastroBanco1.RecuperaRemessa = (txtnRecuperaRemessa.Text);
 
@@ -161,20 +161,8 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-
-            txtnCOD.Clear();
-            txtnRazãoSocial.Clear();
-            cbCondominio.Text = "";
-            txtnCNPJ.Clear();
-            txtnIe.Clear();
-            txtnBanco.Clear();
-            txtnAgencia.Clear();
-            txtnConta.Clear();
-            cbEmiteBoleto.Text = "";
-            txtnNossoNumero.Clear();
-            txtnData.Clear();
-            txtnLançaRemessa.Clear();
-            txtnRecuperaRemessa.Clear();
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
             txtnRazãoSocial.Focus();
 
             CadBanco incremento = new CadBanco();
@@ -207,19 +195,8 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnRazãoSocial.Clear();
-                cbCondominio.Text = "";
-                txtnCNPJ.Clear();
-                txtnIe.Clear();
-                txtnBanco.Clear();
-                txtnAgencia.Clear();
-                txtnConta.Clear();
-                cbEmiteBoleto.Text = "";
-                txtnNossoNumero.Clear();
-                txtnData.Clear();
-                txtnLançaRemessa.Clear();
-                txtnRecuperaRemessa.Clear();
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
                 txtnRazãoSocial.Focus();
 
             }
@@ -235,7 +212,7 @@ namespace Login.view
                 txtnConta.Text = listaCadBanco[ponteiro].Conta;
                 cbEmiteBoleto.Text = listaCadBanco[ponteiro].EmiteBoleto;
                 txtnNossoNumero.Text = listaCadBanco[ponteiro].NossoNumero;
-                txtnData.Text = listaCadBanco[ponteiro].DataVencimento;
+                
                 txtnLançaRemessa.Text = listaCadBanco[ponteiro].LançaRmessa;
                 txtnRecuperaRemessa.Text = listaCadBanco[ponteiro].RecuperaRemessa;
 
@@ -296,6 +273,11 @@ namespace Login.view
             CadBanco cadBanco = new CadBanco();
             incrementar = cadBanco.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

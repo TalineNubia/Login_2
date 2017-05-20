@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,6 +49,7 @@ namespace Login.view
         private void btSalvar_Click(object sender, EventArgs e)
         {
             ContasAPagar lançarContasAPagar1 = new ContasAPagar();
+
             lançarContasAPagar1.Codigo = (txtnCOD.Text);
             lançarContasAPagar1.Nome = (txtnNome.Text);
             lançarContasAPagar1.Despesa = (cbDespesas.Text);
@@ -62,15 +64,9 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-            txtnCOD.Clear();
-            txtnNome.Clear();
-            txtnNota.Clear();
-            txtnObs.Clear();
-            txtnDataVencimento.Clear();
-            txtnSerie.Clear();
-            txtnUnidade.Clear();
-            cbCondominio.Text = "";
-            cbDespesas.Text = "";
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+            txtnNome.Focus();
 
             LancarFuncionario incremento = new LancarFuncionario();
              incrementar = incremento.autoIncremento(incrementar);

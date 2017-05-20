@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Login.Dao
 {
-    class PedidoDao
+   public class PedidoDao
     {
 
     }

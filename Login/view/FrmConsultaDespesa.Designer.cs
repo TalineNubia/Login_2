@@ -39,6 +39,8 @@
             this.btConsultar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbCondominio = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,16 +76,16 @@
             "Limpeza",
             "Multa",
             "Seguro"});
-            this.cbDespesas.Location = new System.Drawing.Point(182, 63);
+            this.cbDespesas.Location = new System.Drawing.Point(454, 53);
             this.cbDespesas.Name = "cbDespesas";
-            this.cbDespesas.Size = new System.Drawing.Size(260, 24);
+            this.cbDespesas.Size = new System.Drawing.Size(232, 24);
             this.cbDespesas.TabIndex = 1;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(92, 65);
+            this.label15.Location = new System.Drawing.Point(361, 55);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(73, 20);
             this.label15.TabIndex = 306;
@@ -96,7 +98,7 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Fixa",
             "Variavel"});
-            this.cbStatus.Location = new System.Drawing.Point(557, 64);
+            this.cbStatus.Location = new System.Drawing.Point(114, 88);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(102, 24);
             this.cbStatus.TabIndex = 2;
@@ -105,7 +107,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(467, 67);
+            this.label5.Location = new System.Drawing.Point(24, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
             this.label5.TabIndex = 307;
@@ -153,12 +155,37 @@
             this.btSalvar.Text = "&Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(16, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(93, 20);
+            this.label17.TabIndex = 310;
+            this.label17.Text = "Condominio";
+            // 
+            // cbCondominio
+            // 
+            this.cbCondominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCondominio.FormattingEnabled = true;
+            this.cbCondominio.Items.AddRange(new object[] {
+            "CONDOMINIO BELA VISTA",
+            "CONDOMINIO VITTA",
+            "CONDOMINIO VILA SEIXAS"});
+            this.cbCondominio.Location = new System.Drawing.Point(113, 53);
+            this.cbCondominio.Name = "cbCondominio";
+            this.cbCondominio.Size = new System.Drawing.Size(229, 24);
+            this.cbCondominio.TabIndex = 309;
+            // 
             // FrmConsultaDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 462);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.cbCondominio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.label5);
@@ -192,5 +219,7 @@
         private System.Windows.Forms.Button btConsultar;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbCondominio;
     }
 }

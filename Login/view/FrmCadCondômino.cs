@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login.view;
+using Login.model;
 
 namespace Login.view
 {
     public partial class FrmCadCondômino : Form
     {
-        List<ClassCadastroCondômino> listaCadastroCondômino = new List<ClassCadastroCondômino>();
+        List<CadastroCondômino> listaCadastroCondômino = new List<CadastroCondômino>();
         int ponteiro = 0;
         int incrementar;
 
@@ -74,7 +75,7 @@ namespace Login.view
 
         private void FrmCadCondômino_Load(object sender, EventArgs e)
         {
-            ClassCadastroCondômino cadCondomino = new ClassCadastroCondômino();
+            CadastroCondômino cadCondomino = new CadastroCondômino();
             
             incrementar = cadCondomino.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
@@ -82,12 +83,13 @@ namespace Login.view
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            ClassCadastroCondômino cadastroCondômino1 = new ClassCadastroCondômino();
+            CadastroCondômino cadastroCondômino1 = new CadastroCondômino();
             //Passando dados do usuario
 
             cadastroCondômino1.Codigo = (txtnCOD.Text);
             cadastroCondômino1.Nome = (txtnNome.Text);
             cadastroCondômino1.Cpf = (txtnCPF.Text);
+            cadastroCondômino1.Rg = (txtnRG.Text);
             cadastroCondômino1.Fone = (txtnFone.Text);
             cadastroCondômino1.CadastroSimNao = (clbAtivoInativo.Text);
             cadastroCondômino1.Email = (txtnEmail.Text);
@@ -96,6 +98,7 @@ namespace Login.view
             cadastroCondômino1.Nome_Conjugue = (txtnNomeConjugue.Text);
             cadastroCondômino1.Cpf_Conjugue = (txtnCpfConjugue.Text);
             cadastroCondômino1.Fone_Conjugue = (txtnFoneConjugue.Text);
+            cadastroCondômino1.Status = (clbAtivoInativo.Text);
 
 
             listaCadastroCondômino.Add(cadastroCondômino1);
@@ -106,21 +109,11 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-            txtnCOD.Clear();
-            txtnNome.Clear();
-            txtnCPF.Clear();
-            txtnFone.Clear();
-            clbAtivoInativo.Text = "";
-            txtnEmail.Clear();
-            cbEstadoCivil.Text = "";
-            cbCondominio.Text = "";
-            cbUnidade.Text = "";
-            txtnNomeConjugue.Clear();
-            txtnCpfConjugue.Clear();
-            txtnFoneConjugue.Clear();
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
             txtnNome.Focus();
 
-            ClassCadastroCondômino incremento = new ClassCadastroCondômino();
+            CadastroCondômino incremento = new CadastroCondômino();
             incrementar = incremento.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
 
@@ -151,18 +144,9 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnNome.Clear();
-                txtnCPF.Clear();
-                txtnFone.Clear();
-                clbAtivoInativo.Text = "";
-                txtnEmail.Clear();
-                cbEstadoCivil.Text = "";
-                cbCondominio.Text = "";
-                cbUnidade.Text = "";
-                txtnNomeConjugue.Clear();
-                txtnCpfConjugue.Clear();
-                txtnFoneConjugue.Clear();
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
+
                 txtnNome.Focus();
 
             }
@@ -172,6 +156,7 @@ namespace Login.view
                 txtnCOD.Text = listaCadastroCondômino[ponteiro].Codigo;
                 txtnNome.Text = listaCadastroCondômino[ponteiro].Nome;
                 txtnCPF.Text = listaCadastroCondômino[ponteiro].Cpf;
+                txtnRG.Text = listaCadastroCondômino[ponteiro].Rg;
                 txtnFone.Text = listaCadastroCondômino[ponteiro].Fone;
                 clbAtivoInativo.Text = listaCadastroCondômino[ponteiro].CadastroSimNao;
                 txtnEmail.Text = listaCadastroCondômino[ponteiro].Email;
@@ -329,6 +314,16 @@ namespace Login.view
             
                 this.Close();
           
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clbAtivoInativo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

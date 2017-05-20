@@ -33,10 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>conexao\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -58,11 +60,15 @@
     <Compile Include="model\CadDespesa.cs" />
     <Compile Include="model\CadFornecedor.cs" />
     <Compile Include="model\CadFuncionario.cs" />
+    <Compile Include="model\Endereco.cs" />
+    <Compile Include="model\LimparTela.cs" />
+    <Compile Include="model\Mensalidade.cs" />
     <Compile Include="model\Morador.cs" />
     <Compile Include="model\Pedido.cs" />
     <Compile Include="model\DadosFuncionario.cs" />
     <Compile Include="model\LancarFuncionario.cs" />
     <Compile Include="model\ContasAPagar.cs" />
+    <Compile Include="model\Pessoa.cs" />
     <Compile Include="view\FrmCadBanco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,7 +439,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Online-Customer-Support-Icon.png" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    public class Morador
+    public class Morador : Pessoa
     {
         private string codigo;
-        private string nome;
         private string cpf;
         
 
@@ -20,12 +20,6 @@ namespace Login
 
         }
 
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
-      
         public string Cpf
         {
             get { return cpf; }

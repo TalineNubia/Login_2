@@ -157,9 +157,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(221, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Nome *";
             // 
             // label3
             // 
@@ -167,9 +167,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 8;
-            this.label3.Text = "CNPJ";
+            this.label3.Text = "CNPJ *";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -293,9 +293,9 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(306, 123);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 20);
+            this.label15.Size = new System.Drawing.Size(39, 20);
             this.label15.TabIndex = 78;
-            this.label15.Text = "I.E";
+            this.label15.Text = "I.E *";
             // 
             // txtnRPredial
             // 

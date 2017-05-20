@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,7 +54,7 @@ namespace Login.view
 
             if (e.KeyCode == Keys.Return)
             {
-                cbCodvd.Focus();
+              
 
             }
         }
@@ -73,7 +74,7 @@ namespace Login.view
 
             if (e.KeyCode == Keys.Return)
             {
-                cbCodvd.Focus();
+                
             }
         }
 
@@ -112,7 +113,6 @@ namespace Login.view
             lancarFuncionario1.Despesa = (cbDespesas.Text);
             lancarFuncionario1.Condominio = (cbCondominio.Text);
             lancarFuncionario1.ReferenteMes2 = (txtnData2.Text);
-            lancarFuncionario1.CodigoVd = (cbCodvd.Text);
             lancarFuncionario1.Valor = (txtnValor.Text);
             lancarFuncionario1.ReferenteMes = (txtnData.Text);
             lancarFuncionario1.Vencimento = (txtnVencimento.Text);
@@ -120,18 +120,10 @@ namespace Login.view
 
             Mensagem salvar = new Mensagem();
             salvar.salvando();
-
-
-            txtnCOD.Clear();
-            txtnFuncionario.Clear();
-            cbCondominio.Text = "";
-            txtnObs.Clear();
-            cbCodvd.Text = "";
-            cbDespesas.Text = "";
-            txtnData2.Text = "";
-            txtnValor.Clear();
-            txtnData.Clear();
-            txtnVencimento.Clear();
+                               
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+            txtnFuncionario.Focus();
 
             LancarFuncionario incremento = new LancarFuncionario();
             incrementar = incremento.autoIncremento(incrementar);

@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Login.view;
+using Login.model;
 
 namespace Login.view
 {
     public partial class FrmCadProprietarios : Form
     {
-        List<CadastroProprietario> listaproprietario = new List<CadastroProprietario>();
+        List<CadastroProprietario> listaproprietario = new List <CadastroProprietario>();
+        
+        
         int ponteiro = 0;
         int incrementar;
 
@@ -46,20 +49,23 @@ namespace Login.view
             CadastroProprietario cadastro = new CadastroProprietario();
             // passando o conteudo digitado pelo usuario
 
-            cadastro.Codigo_proprietario = (txtnCOD.Text);
-            cadastro.Nome_Proprietario = (txtnNome.Text);
-            cadastro.Cpf_Proprietario = (txtnCPF.Text);
-            cadastro.Rg_proprietario = (txtnRG.Text);
-            cadastro.Fone_proprietario = (txtnFone.Text);
-            cadastro.Fone1_proprietario = (txtnFone1.Text);
-            cadastro.Email_proprietario = (txtnEmail.Text);
-            cadastro.EstadoCivil_proprietario = (cbEstadoCivil.Text);
-            cadastro.Cep_proprietario = (txtnCEP.Text);
-            cadastro.Municipio_proprietario = (txtnMunicipio.Text);
-            cadastro.Uf_proprietario = (cbUF.Text);
-            cadastro.Bairro_proprietario = (txtnBairro.Text);
-            cadastro.Condominio_proprietario = (cbCondominio.Text);
-            cadastro.Morador_proprietario = (clbMorador.Text);
+            cadastro.Codigo = (txtnCOD.Text);
+            cadastro.Nome = (txtnNome.Text);
+            cadastro.Cpf = (txtnCPF.Text);
+            cadastro.Rg = (txtnRG.Text);
+            cadastro.Fone = (txtnFone.Text);
+            cadastro.Fone1 = (txtnFone1.Text);
+            cadastro.Email = (txtnEmail.Text);
+            cadastro.EstadoCivil = (cbEstadoCivil.Text);
+            cadastro.Cep = (txtnCEP.Text);
+            cadastro.Endereço = (txtnEndereco.Text);
+            cadastro.Numero = (txtnNumero.Text);
+            cadastro.Municipio = (txtnMunicipio.Text);
+            cadastro.Uf = (cbUF.Text);
+            cadastro.Bairro = (txtnBairro.Text);
+            cadastro.Condominio = (cbCondominio.Text);
+            cadastro.Morador = (clbMorador.Text);
+            cadastro.Status = (clbAtivoInativo.Text);
 
 
 
@@ -70,25 +76,13 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-            txtnCOD.Clear();
-            txtnNome.Clear();
-            txtnCPF.Clear();
-            txtnRG.Clear();
-            txtnEmail.Clear();
-            txtnFone1.Clear();
-            txtnFone.Clear();
-            txtnEndereco.Clear();
-            txtnNumero.Clear();
-            txtnMunicipio.Clear();
-            txtnCEP.Clear();
-            txtnBairro.Clear();
-            cbCondominio.Text = "";
-            cbUF.Text = "";
-            clbMorador.Text = "";
-            txtnCOD.Focus();
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+            txtnNome.Focus();
 
 
             CadastroProprietario incremento = new CadastroProprietario();
+            
             incrementar = incremento.autoIncremento(incrementar);
             txtnCOD.Text = Convert.ToString(incrementar);
 
@@ -118,50 +112,39 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnNome.Clear();
-                txtnCPF.Clear();
-                txtnRG.Clear();
-                txtnEmail.Clear();
-                txtnFone1.Clear();
-                txtnFone.Clear();
-                txtnEndereco.Clear();
-                txtnNumero.Clear();
-                txtnMunicipio.Clear();
-                txtnCEP.Clear();
-                txtnBairro.Clear();
-                cbCondominio.Text = "";
-                cbUF.Text = "";
-                clbMorador.Text = "";
-                txtnCOD.Focus();
-
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
+                txtnNome.Focus();
             }
 
             else
             {
-                txtnCOD.Text = listaproprietario[ponteiro].Codigo_proprietario;
-                txtnNome.Text = listaproprietario[ponteiro].Nome_Proprietario;
-                txtnCPF.Text = listaproprietario[ponteiro].Cpf_Proprietario;
-                txtnFone.Text = listaproprietario[ponteiro].Fone_proprietario;
-                txtnFone1.Text = listaproprietario[ponteiro].Fone1_proprietario;
-                txtnEmail.Text = listaproprietario[ponteiro].Email_proprietario;
-                cbEstadoCivil.Text = listaproprietario[ponteiro].EstadoCivil_proprietario;
-                txtnCEP.Text = listaproprietario[ponteiro].Cep_proprietario;
-                txtnMunicipio.Text = listaproprietario[ponteiro].Municipio_proprietario;
-                cbUF.Text = listaproprietario[ponteiro].Uf_proprietario;
-                txtnBairro.Text = listaproprietario[ponteiro].Bairro_proprietario;
-                cbCondominio.Text = listaproprietario[ponteiro].Condominio_proprietario;
-                clbMorador.Text = listaproprietario[ponteiro].Morador_proprietario;
 
+                txtnCOD.Text = listaproprietario[ponteiro].Codigo;
+                txtnNome.Text = listaproprietario[ponteiro].Nome;
+                txtnCPF.Text = listaproprietario[ponteiro].Cpf;
+                txtnFone.Text = listaproprietario[ponteiro].Fone;
+                txtnFone1.Text = listaproprietario[ponteiro].Fone1;
+                txtnEmail.Text = listaproprietario[ponteiro].Email;
+                cbEstadoCivil.Text = listaproprietario[ponteiro].EstadoCivil;
+                txtnEndereco.Text = listaproprietario[ponteiro].Endereço;
+                txtnNumero.Text = listaproprietario[ponteiro].Numero;
+                txtnCEP.Text = listaproprietario[ponteiro].Cep;
+                txtnMunicipio.Text = listaproprietario[ponteiro].Municipio;
+                cbUF.Text = listaproprietario[ponteiro].Uf;
+                txtnBairro.Text = listaproprietario[ponteiro].Bairro;
+                cbCondominio.Text = listaproprietario[ponteiro].Condominio;
+                clbMorador.Text = listaproprietario[ponteiro].Morador;
+                clbAtivoInativo.Text = listaproprietario[ponteiro].Status;
             }
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            if (listaproprietario.Count > 0)
+            if (listaproprietario.Count > 0 )
                 listaproprietario.RemoveAt(ponteiro);
 
-            if (listaproprietario.Count > 0)
+            if (listaproprietario.Count > 0 )
             {
                 ponteiro = listaproprietario.Count - 1;
                 LoadField(false);

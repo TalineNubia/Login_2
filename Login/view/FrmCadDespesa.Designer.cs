@@ -48,6 +48,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtnObs = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbCondominio = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(263, 150);
+            this.label5.Location = new System.Drawing.Point(421, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
             this.label5.TabIndex = 136;
@@ -139,7 +141,7 @@
             this.cbTipoDespesa.Items.AddRange(new object[] {
             "Fixa",
             "Variavel"});
-            this.cbTipoDespesa.Location = new System.Drawing.Point(353, 147);
+            this.cbTipoDespesa.Location = new System.Drawing.Point(510, 146);
             this.cbTipoDespesa.Name = "cbTipoDespesa";
             this.cbTipoDespesa.Size = new System.Drawing.Size(102, 24);
             this.cbTipoDespesa.TabIndex = 3;
@@ -148,9 +150,9 @@
             // txtnValor
             // 
             this.txtnValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnValor.Location = new System.Drawing.Point(352, 188);
+            this.txtnValor.Location = new System.Drawing.Point(675, 148);
             this.txtnValor.Name = "txtnValor";
-            this.txtnValor.Size = new System.Drawing.Size(103, 22);
+            this.txtnValor.Size = new System.Drawing.Size(96, 22);
             this.txtnValor.TabIndex = 4;
             this.txtnValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnValor_KeyDown);
             // 
@@ -158,7 +160,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(266, 191);
+            this.label1.Location = new System.Drawing.Point(622, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 20);
             this.label1.TabIndex = 139;
@@ -225,7 +227,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(86, 244);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(651, 135);
+            this.groupBox2.Size = new System.Drawing.Size(685, 135);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Observações";
@@ -235,7 +237,7 @@
             this.txtnObs.Location = new System.Drawing.Point(7, 17);
             this.txtnObs.Multiline = true;
             this.txtnObs.Name = "txtnObs";
-            this.txtnObs.Size = new System.Drawing.Size(628, 99);
+            this.txtnObs.Size = new System.Drawing.Size(672, 112);
             this.txtnObs.TabIndex = 5;
             this.txtnObs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnObs_KeyDown);
             // 
@@ -250,12 +252,37 @@
             this.label2.Text = "Cadastro de despesas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(82, 149);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(93, 20);
+            this.label17.TabIndex = 312;
+            this.label17.Text = "Condominio";
+            // 
+            // cbCondominio
+            // 
+            this.cbCondominio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCondominio.FormattingEnabled = true;
+            this.cbCondominio.Items.AddRange(new object[] {
+            "CONDOMINIO BELA VISTA",
+            "CONDOMINIO VITTA",
+            "CONDOMINIO VILA SEIXAS"});
+            this.cbCondominio.Location = new System.Drawing.Point(179, 147);
+            this.cbCondominio.Name = "cbCondominio";
+            this.cbCondominio.Size = new System.Drawing.Size(229, 24);
+            this.cbCondominio.TabIndex = 311;
+            // 
             // FrmCadDespesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 462);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.cbCondominio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -308,5 +335,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtnObs;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbCondominio;
     }
 }

@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Configuration;
+using MySql.Data.Types;
+using System.Data.SqlClient;
+using Login.model;
 
 namespace Login.view
 {
@@ -15,10 +19,8 @@ namespace Login.view
     {
         List<Pedido> listaCadPedido = new List<Pedido>();
         int ponteiro = 0;
-        int incrementar;
-        private MySqlConnection bdConn; //MySQL
-        private MySqlDataAdapter bdAdapter;
-        private DataSet bdDataSet; //MySQL
+        
+        
 
         public FrmCadPedidos()
         {
@@ -55,116 +57,47 @@ namespace Login.view
         private void btSalvar_Click(object sender, EventArgs e)
         {
 
-            //Definição do dataset
-            bdDataSet = new DataSet();
-            //Define string de conexão
-            bdConn = new MySqlConnection("server = localhost; database = bdcondominio; uid = root; pwd=''");
+                //passa a string de conexão 
+                MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306; User Id=root;database=bdcondominio;password=''");
+                //Abre o banco de dados
+                
 
-            // string str = @"server=localhost; userid = root; database=bdcondominio";
+                string sql = "insert into pedido (nome,  datapedido, condominio, unidade, prioridade, fone, pedido,resposta) " +
+                    "values (@nome, @datapedido, @condominio, @unidade, @prioridade, @fone, @pedido,@resposta)";
 
+            //Parametros do comando
 
-            //Abre conecção
             try
             {
-                bdConn.Open();
+                MySqlCommand objcmd = new MySqlCommand(sql, objcon);
+
+                objcon.Open();                
+                objcmd.Parameters.Add(new MySqlParameter("@nome",this.txtnNome.Text));
+                objcmd.Parameters.Add(new MySqlParameter("@datapedido", this.txtnDataPedido.Text));
+                objcmd.Parameters.Add(new MySqlParameter("@condominio", this.cbCondominio.Text));
+                objcmd.Parameters.Add(new MySqlParameter("@unidade", this.cbUnidade.Text));
+                objcmd.Parameters.Add(new MySqlParameter("@prioridade", this.cbPrioridade.Text ));
+                objcmd.Parameters.Add(new MySqlParameter("@fone", this.txtnFone.Text));
+                objcmd.Parameters.Add(new MySqlParameter("@pedido",this.txtnPedido.Text));
+                objcmd.Parameters.Add(new MySqlParameter("@resposta", this.txtnResposta.Text));
+
+                objcmd.ExecuteNonQuery();                
+
             }
-            catch
+            catch (Exception erro)
             {
-                MessageBox.Show("Impossível estabelecer conexão");
+                MessageBox.Show("Não conectou: "+ erro);
             }
-            //Verifica se a conexão está aberta
-            if (bdConn.State == ConnectionState.Open)
+            finally
             {
-                //Se estiver aberta insere os dados na BD
-                MySqlCommand commS = new MySqlCommand("INSERT INTO pedido (nome, datapedido,condominio,unidade,prioridade,fone,pedido,respost)VALUES('',\\'" + txtnNome.Text + "\\',\\'" + txtnDataPedido.Text + "\\',\\'" + cbCondominio.Text + "\\',\\'" + cbUnidade.Text + "\\',\\'" + cbPrioridade.Text + "\\',\\'" + txtnFone.Text + "\\',\\'" + txtnPedido.Text + "\\',\\'" + txtnResposta.Text + "\\')", bdConn);
-                commS.BeginExecuteNonQuery();
-
+                objcon.Close();
+                Mensagem salvar = new Mensagem();
+                salvar.salvando();
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
             }
 
 
-
- /*
-             try
-              {
-                    bdConn.Open();
-                    string inserir = "INSERT INTO pedido" 
-                        +"(nome, datapedido,condominio,unidade,prioridade,fone,pedido,resposta)"
-                        + "values (@nome,@datapedido,@condominio,@unidade,@prioridade,@fone,@pedido,@resposta);";
-
-                  bdConn.Open();
-                  MySqlCommand cmd = new MySqlCommand("INSERT INTO pedido values (@nome,@datapedido,@condominio,@unidade,@prioridade,@fone,@pedido,@resposta);", bdConn);
-
-                cmd.Prepare();
-                  cmd.Parameters.AddWithValue("@nome", txtnNome.Text);
-                  cmd.Parameters.AddWithValue("@datapedido", txtnDataPedido.Text);
-                  cmd.Parameters.AddWithValue("@condominio", cbCondominio.Text);
-                  cmd.Parameters.AddWithValue("@unidade", cbUnidade.Text);
-                  cmd.Parameters.AddWithValue("@prioridade", cbPrioridade.Text);
-                  cmd.Parameters.AddWithValue("@fone", txtnFone.Text);
-                  cmd.Parameters.AddWithValue("@pedido", txtnPedido.Text);
-                  cmd.Parameters.AddWithValue("@resposta", txtnResposta.Text);
-
-                  cmd.ExecuteNonQuery();
-
-                  MessageBox.Show("Ocorrencia adicionado com sucesso");
-                  txtnNome.Text = "";
-                  txtnDataPedido.Text = "";
-                  cbCondominio.Text = "";
-                  cbUnidade.Text = "";
-                  cbPrioridade.Text = "";
-                  txtnFone.Text = "";
-                  txtnPedido.Text = "";
-                  txtnResposta.Text = "";
-
-              } catch (Exception ex)
-              {
-
-                  MessageBox.Show("Error:" + ex.ToString());
-
-              }
-              finally
-              {
-
-                  if (bdConn != null)
-                  {
-                      bdConn.Close();
-                  }
-
-              }
-              */
-
-            /* Pedido cadastro = new Pedido();
-
-             cadastro.Codigo = (txtnCOD.Text);
-             cadastro.Nome = (txtnNome.Text);
-             cadastro.Data = (txtnDataPedido.Text);
-             cadastro.Condominio = (cbCondominio.Text);
-             cadastro.Observação = (txtnPedido.Text);
-             cadastro.Prioridade = (cbPrioridade.Text);
-             cadastro.Resposta = (txtnResposta.Text);
-             cadastro.Fone = (txtnFone.Text);
-
-             listaCadPedido.Add(cadastro);
-             ponteiro = listaCadPedido.Count - 1;
-             LoadField(true);
-
-             Mensagem salvar = new Mensagem();
-             salvar.salvando();
-             txtnCOD.Clear();
-             txtnNome.Clear();
-             txtnFone.Clear();
-             txtnPedido.Clear();
-             txtnResposta.Clear();
-             cbCondominio.Text = "";
-             cbPrioridade.Text = "";
-             cbUnidade.Text = "";
-             txtnNome.Focus();
-
-             Pedido incremento = new Pedido();
-             incrementar = incremento.autoIncremento(incrementar);
-             txtnCOD.Text = Convert.ToString(incrementar);
-
-     */
         }
 
         private void btAnterior_Click(object sender, EventArgs e)

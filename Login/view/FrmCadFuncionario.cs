@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -89,6 +90,7 @@ namespace Login.view
             cadastro.Cargo = (cbCargo.Text);
             cadastro.Sexo = (cbSexo.Text);
             cadastro.DataNascimento = (txtnDataNasc.Text);
+            cadastro.Status = (clbAtivoInativo.Text);
 
             listaCadFuncionario.Add(cadastro);
             ponteiro = listaCadFuncionario.Count - 1;
@@ -96,24 +98,9 @@ namespace Login.view
 
             Mensagem salvar = new Mensagem();
             salvar.salvando();
-            txtnCOD.Clear();
-            txtnNome.Clear();
-            txtnCPF.Clear();
-            txtnRG.Clear();
-            txtnEmail.Clear();
-            txtnDataNasc.Clear();
-            txtnFone.Clear();
-            txtnEndereco.Clear();
-            txtnNumero.Clear();
-            txtnMunicipio.Clear();
-            txtnCEP.Clear();
-            txtnBairro.Clear();
-            cbCondominio.Text = "";
-            cbUF.Text = "";
-            cbSexo.Text = "";
-            cbDespesas.Text = "";
-            cbCargo.Text = "";
-            cbEstadoCivil.Text = "";
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+
             txtnNome.Focus();
 
             CadFuncionario incremento = new CadFuncionario();
@@ -146,24 +133,8 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnNome.Clear();
-                txtnCPF.Clear();
-                txtnRG.Clear();
-                txtnEmail.Clear();
-                txtnDataNasc.Clear();
-                txtnFone.Clear();
-                txtnEndereco.Clear();
-                txtnNumero.Clear();
-                txtnMunicipio.Clear();
-                txtnCEP.Clear();
-                txtnBairro.Clear();
-                cbCondominio.Text = "";
-                cbUF.Text = "";
-                cbSexo.Text = "";
-                cbDespesas.Text = "";
-                cbCargo.Text = "";
-                cbEstadoCivil.Text = "";
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
                 txtnNome.Focus();
 
             }
@@ -184,6 +155,7 @@ namespace Login.view
                 cbCargo.Text = listaCadFuncionario[ponteiro].Cargo;
                 cbDespesas.Text = listaCadFuncionario[ponteiro].Despesa;
                 cbSexo.Text = listaCadFuncionario[ponteiro].Sexo;
+                clbAtivoInativo.Text = listaCadFuncionario[ponteiro].Status;
                 
 
             }

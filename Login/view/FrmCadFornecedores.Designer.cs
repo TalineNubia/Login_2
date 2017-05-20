@@ -103,7 +103,7 @@
             this.txtnCEP.Location = new System.Drawing.Point(89, 204);
             this.txtnCEP.Mask = "00000-000";
             this.txtnCEP.Name = "txtnCEP";
-            this.txtnCEP.Size = new System.Drawing.Size(104, 22);
+            this.txtnCEP.Size = new System.Drawing.Size(90, 22);
             this.txtnCEP.TabIndex = 10;
             this.txtnCEP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnCEP_KeyDown);
             // 
@@ -228,11 +228,12 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(627, 205);
+            this.label12.Location = new System.Drawing.Point(562, 206);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(28, 18);
             this.label12.TabIndex = 100;
             this.label12.Text = "UF";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // cbUF
             // 
@@ -266,10 +267,11 @@
             "SP",
             "SE",
             "TO"});
-            this.cbUF.Location = new System.Drawing.Point(661, 202);
+            this.cbUF.Location = new System.Drawing.Point(592, 205);
             this.cbUF.Name = "cbUF";
             this.cbUF.Size = new System.Drawing.Size(53, 24);
             this.cbUF.TabIndex = 12;
+            this.cbUF.SelectedIndexChanged += new System.EventHandler(this.cbUF_SelectedIndexChanged);
             this.cbUF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbUF_KeyDown);
             // 
             // txtnCOD
@@ -296,9 +298,9 @@
             // 
             this.txtnMunicipio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnMunicipio.Location = new System.Drawing.Point(279, 205);
+            this.txtnMunicipio.Location = new System.Drawing.Point(266, 205);
             this.txtnMunicipio.Name = "txtnMunicipio";
-            this.txtnMunicipio.Size = new System.Drawing.Size(335, 22);
+            this.txtnMunicipio.Size = new System.Drawing.Size(281, 22);
             this.txtnMunicipio.TabIndex = 11;
             this.txtnMunicipio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnMunicipio_KeyDown);
             // 
@@ -345,7 +347,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(199, 206);
+            this.label7.Location = new System.Drawing.Point(186, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 20);
             this.label7.TabIndex = 98;

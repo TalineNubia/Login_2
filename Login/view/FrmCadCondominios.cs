@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,18 +47,18 @@ namespace Login.view
             CadastroCondominio cadastro = new CadastroCondominio();
             // passando conteudo digitado pelo usuario
 
-            cadastro.Codigo_condominio = (txtnCOD.Text);
-            cadastro.Nome_condominio = (txtnNome.Text);
-            cadastro.Cnpj_condominio = (txtnCnpj.Text);
-            cadastro.Email_condominio = (txtnEmail.Text);
-            cadastro.Fone_condominio = (txtnFone1.Text);
-            cadastro.Cep_condominio = (txtnCEP.Text);
-            cadastro.Municipio_condominio = (txtnMunicipio.Text);
-            cadastro.Uf_condominio = (cbUF.Text);
-            cadastro.Endereço_condominio = (txtnEndereco.Text);
-            cadastro.Numero_condominio = (txtnNumero.Text);
-            cadastro.Bairro_condominio = (txtnBairro.Text);
-            cadastro.RegistroMatricial_condominio = (txtnRMatricial.Text);
+            cadastro.Codigo = (txtnCOD.Text);
+            cadastro.Nome = (txtnNome.Text);
+            cadastro.Cnpj = (txtnCnpj.Text);
+            cadastro.Email = (txtnEmail.Text);
+            cadastro.Fone = (txtnFone1.Text);
+            cadastro.Cep = (txtnCEP.Text);
+            cadastro.Municipio = (txtnMunicipio.Text);
+            cadastro.Uf = (cbUF.Text);
+            cadastro.Endereço = (txtnEndereco.Text);
+            cadastro.Numero = (txtnNumero.Text);
+            cadastro.Bairro = (txtnBairro.Text);
+            cadastro.RegistroMatricial = (txtnRMatricial.Text);
             cadastro.RegistroPredial_condominio = (txtnRPredial.Text);
 
 
@@ -71,22 +72,12 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-            
-            txtnNome.Clear();
-            txtnCnpj.Clear();
-            txtnFone1.Clear();
-            txtnIe.Clear();
-            txtnEmail.Clear();
-            txtnCEP.Clear();
-            txtnMunicipio.Clear();
-            txtnEndereco.Clear();
-            cbUF.Text = "";
-            txtnNumero.Clear();
-            txtnRMatricial.Clear();
-            txtnRPredial.Clear();
+
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
             txtnNome.Focus();
 
-           CadastroCondominio incremento = new CadastroCondominio();
+            CadastroCondominio incremento = new CadastroCondominio();
 
           incrementar = incremento.autoIncremento(incrementar);
           txtnCOD.Text = Convert.ToString(incrementar);
@@ -124,37 +115,25 @@ namespace Login.view
             if (newValues)
             {
 
-                
-                txtnNome.Clear();
-                txtnCnpj.Clear();
-                txtnFone1.Clear();
-                txtnIe.Clear();
-                txtnEmail.Clear();
-                txtnCEP.Clear();
-                txtnMunicipio.Clear();
-                txtnEndereco.Clear();
-                cbUF.Text = "";
-                txtnNumero.Clear();
-                txtnRMatricial.Clear();
-                txtnRPredial.Clear();
-
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
                 txtnNome.Focus();
 
             }
             else
             {
-                txtnCOD.Text = listacadastro[ponteiro].Codigo_condominio;
-                txtnNome.Text = listacadastro[ponteiro].Nome_condominio;
-                txtnEmail.Text = listacadastro[ponteiro].Email_condominio;
-                txtnFone1.Text = listacadastro[ponteiro].Fone_condominio;
-                txtnCnpj.Text = listacadastro[ponteiro].Cnpj_condominio;
-                txtnIe.Text = listacadastro[ponteiro].Ie_condominio;
-                txtnCEP.Text = listacadastro[ponteiro].Cep_condominio;
-                txtnMunicipio.Text = listacadastro[ponteiro].Municipio_condominio;
-                txtnEndereco.Text = listacadastro[ponteiro].Endereço_condominio;
-                cbUF.Text = listacadastro[ponteiro].Uf_condominio;
-                txtnNumero.Text = listacadastro[ponteiro].Numero_condominio;
-                txtnRMatricial.Text = listacadastro[ponteiro].RegistroMatricial_condominio;
+                txtnCOD.Text = listacadastro[ponteiro].Codigo;
+                txtnNome.Text = listacadastro[ponteiro].Nome;
+                txtnEmail.Text = listacadastro[ponteiro].Email;
+                txtnFone1.Text = listacadastro[ponteiro].Fone;
+                txtnCnpj.Text = listacadastro[ponteiro].Cnpj;
+                txtnIe.Text = listacadastro[ponteiro].Ie;
+                txtnCEP.Text = listacadastro[ponteiro].Cep;
+                txtnMunicipio.Text = listacadastro[ponteiro].Municipio;
+                txtnEndereco.Text = listacadastro[ponteiro].Endereço;
+                cbUF.Text = listacadastro[ponteiro].Uf;
+                txtnNumero.Text = listacadastro[ponteiro].Numero;
+                txtnRMatricial.Text = listacadastro[ponteiro].RegistroMatricial;
                 txtnRPredial.Text = listacadastro[ponteiro].RegistroPredial_condominio;
             }
 

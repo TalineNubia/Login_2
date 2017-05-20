@@ -51,8 +51,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtnVencimento = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbCodvd = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtnData2 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
@@ -137,9 +135,9 @@
             // 
             this.txtnValor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnValor.Location = new System.Drawing.Point(133, 249);
+            this.txtnValor.Location = new System.Drawing.Point(133, 212);
             this.txtnValor.Name = "txtnValor";
-            this.txtnValor.Size = new System.Drawing.Size(113, 22);
+            this.txtnValor.Size = new System.Drawing.Size(152, 22);
             this.txtnValor.TabIndex = 9;
             this.txtnValor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnValor_KeyDown);
             // 
@@ -147,7 +145,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 251);
+            this.label3.Location = new System.Drawing.Point(34, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 251;
@@ -176,7 +174,7 @@
             // txtnData
             // 
             this.txtnData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnData.Location = new System.Drawing.Point(478, 169);
+            this.txtnData.Location = new System.Drawing.Point(176, 168);
             this.txtnData.Mask = "00/00/0000";
             this.txtnData.Name = "txtnData";
             this.txtnData.Size = new System.Drawing.Size(109, 22);
@@ -188,7 +186,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(336, 171);
+            this.label11.Location = new System.Drawing.Point(34, 170);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(137, 20);
             this.label11.TabIndex = 247;
@@ -282,7 +280,7 @@
             // txtnVencimento
             // 
             this.txtnVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnVencimento.Location = new System.Drawing.Point(133, 214);
+            this.txtnVencimento.Location = new System.Drawing.Point(558, 168);
             this.txtnVencimento.Mask = "00/00/0000";
             this.txtnVencimento.Name = "txtnVencimento";
             this.txtnVencimento.Size = new System.Drawing.Size(113, 22);
@@ -294,43 +292,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 216);
+            this.label4.Location = new System.Drawing.Point(457, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 264;
             this.label4.Text = "Vencimento";
             // 
-            // cbCodvd
-            // 
-            this.cbCodvd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCodvd.FormattingEnabled = true;
-            this.cbCodvd.Items.AddRange(new object[] {
-            "Salario Semanal",
-            "Salario Mensal",
-            "Vale",
-            "13° Salario",
-            "Ferias",
-            "Vale Transporte"});
-            this.cbCodvd.Location = new System.Drawing.Point(124, 167);
-            this.cbCodvd.Name = "cbCodvd";
-            this.cbCodvd.Size = new System.Drawing.Size(180, 24);
-            this.cbCodvd.TabIndex = 5;
-            this.cbCodvd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbCodvd_KeyDown);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 171);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 20);
-            this.label5.TabIndex = 266;
-            this.label5.Text = "Cod V/D";
-            // 
             // txtnData2
             // 
             this.txtnData2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnData2.Location = new System.Drawing.Point(620, 169);
+            this.txtnData2.Location = new System.Drawing.Point(318, 168);
             this.txtnData2.Mask = "00/00/0000";
             this.txtnData2.Name = "txtnData2";
             this.txtnData2.Size = new System.Drawing.Size(109, 22);
@@ -342,7 +313,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(593, 169);
+            this.label6.Location = new System.Drawing.Point(291, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 20);
             this.label6.TabIndex = 268;
@@ -356,8 +327,6 @@
             this.ClientSize = new System.Drawing.Size(813, 462);
             this.Controls.Add(this.txtnData2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbCodvd);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtnVencimento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbDespesas);
@@ -417,8 +386,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MaskedTextBox txtnVencimento;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbCodvd;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtnData2;
         private System.Windows.Forms.Label label6;
     }

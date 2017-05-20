@@ -64,6 +64,8 @@
             this.clbAtivoInativo = new System.Windows.Forms.CheckedListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtnCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtnRG = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +108,7 @@
             // txtnFone
             // 
             this.txtnFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnFone.Location = new System.Drawing.Point(296, 129);
+            this.txtnFone.Location = new System.Drawing.Point(304, 169);
             this.txtnFone.Mask = "(99) 00000-0000";
             this.txtnFone.Name = "txtnFone";
             this.txtnFone.Size = new System.Drawing.Size(146, 22);
@@ -161,7 +163,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(248, 130);
+            this.label13.Location = new System.Drawing.Point(248, 169);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(46, 20);
             this.label13.TabIndex = 113;
@@ -179,7 +181,7 @@
             // 
             // btNovo
             // 
-            this.btNovo.Location = new System.Drawing.Point(158, 89);
+            this.btNovo.Location = new System.Drawing.Point(171, 89);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(47, 21);
             this.btNovo.TabIndex = 109;
@@ -190,7 +192,7 @@
             // 
             this.txtnCOD.Enabled = false;
             this.txtnCOD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnCOD.Location = new System.Drawing.Point(87, 88);
+            this.txtnCOD.Location = new System.Drawing.Point(89, 88);
             this.txtnCOD.Name = "txtnCOD";
             this.txtnCOD.Size = new System.Drawing.Size(65, 22);
             this.txtnCOD.TabIndex = 1;
@@ -210,9 +212,9 @@
             // 
             this.txtnNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnNome.Location = new System.Drawing.Point(260, 89);
+            this.txtnNome.Location = new System.Drawing.Point(277, 87);
             this.txtnNome.Name = "txtnNome";
-            this.txtnNome.Size = new System.Drawing.Size(540, 22);
+            this.txtnNome.Size = new System.Drawing.Size(523, 22);
             this.txtnNome.TabIndex = 2;
             this.txtnNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnNome_KeyDown);
             // 
@@ -220,7 +222,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(208, 89);
+            this.label2.Location = new System.Drawing.Point(221, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 100;
@@ -417,11 +419,11 @@
             this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
-            "FEMININO",
-            "MASCULINO"});
+            "F",
+            "M"});
             this.cbSexo.Location = new System.Drawing.Point(90, 167);
             this.cbSexo.Name = "cbSexo";
-            this.cbSexo.Size = new System.Drawing.Size(146, 24);
+            this.cbSexo.Size = new System.Drawing.Size(126, 24);
             this.cbSexo.TabIndex = 6;
             this.cbSexo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbSexo_KeyDown);
             // 
@@ -447,6 +449,7 @@
             this.clbAtivoInativo.Name = "clbAtivoInativo";
             this.clbAtivoInativo.Size = new System.Drawing.Size(120, 46);
             this.clbAtivoInativo.TabIndex = 5;
+            this.clbAtivoInativo.SelectedIndexChanged += new System.EventHandler(this.clbAtivoInativo_SelectedIndexChanged);
             this.clbAtivoInativo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.clbAtivoInativo_KeyDown);
             // 
             // label10
@@ -465,9 +468,29 @@
             this.txtnCPF.Location = new System.Drawing.Point(90, 128);
             this.txtnCPF.Mask = "000-000-000-00";
             this.txtnCPF.Name = "txtnCPF";
-            this.txtnCPF.Size = new System.Drawing.Size(146, 22);
+            this.txtnCPF.Size = new System.Drawing.Size(126, 22);
             this.txtnCPF.TabIndex = 3;
             this.txtnCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnCPF_KeyDown);
+            // 
+            // txtnRG
+            // 
+            this.txtnRG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnRG.Location = new System.Drawing.Point(304, 129);
+            this.txtnRG.Mask = "00-000-000-0";
+            this.txtnRG.Name = "txtnRG";
+            this.txtnRG.Size = new System.Drawing.Size(146, 22);
+            this.txtnRG.TabIndex = 128;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(248, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 20);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "RG";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // FrmCadCondômino
             // 
@@ -475,6 +498,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 462);
+            this.Controls.Add(this.txtnRG);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtnCPF);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.clbAtivoInativo);
@@ -554,5 +579,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btMaismoradores;
         private System.Windows.Forms.MaskedTextBox txtnCPF;
+        private System.Windows.Forms.MaskedTextBox txtnRG;
+        private System.Windows.Forms.Label label4;
     }
 }

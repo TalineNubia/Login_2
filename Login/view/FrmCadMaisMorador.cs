@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,10 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
+            txtnNome.Focus();
+
 
             Morador incremento = new Morador();
             incrementar = incremento.autoIncremento(incrementar);
@@ -46,10 +51,10 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnNome.Clear();
-                txtnCPF.Clear();
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
 
+                txtnNome.Focus();
 
             }
             else

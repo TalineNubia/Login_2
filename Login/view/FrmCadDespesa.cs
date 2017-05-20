@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -66,7 +67,7 @@ namespace Login.view
             cadastroDespesa1.TipoDespesa = (cbTipoDespesa.Text);
             cadastroDespesa1.Valor = (txtnValor.Text);
             cadastroDespesa1.Observação = (txtnObs.Text);
-
+            cadastroDespesa1.Condominio = (cbCondominio.Text);
             listaCadDespesa1.Add(cadastroDespesa1);
             ponteiro = listaCadDespesa1.Count - 1;
             LoadField(true);
@@ -74,11 +75,8 @@ namespace Login.view
             Mensagem salvar = new Mensagem();
             salvar.salvando();
 
-
-            txtnCOD.Clear();
-            txtnDespesa.Clear();
-            txtnObs.Clear();
-            txtnValor.Clear();
+            LimparTela limpa = new LimparTela();
+            limpa.Limpar(this);
             txtnDespesa.Focus();
 
             CadDespesa incremento = new CadDespesa();
@@ -112,11 +110,8 @@ namespace Login.view
         {
             if (newValues)
             {
-                txtnCOD.Clear();
-                txtnDespesa.Clear();
-                txtnObs.Clear();
-                txtnValor.Clear();
-                
+                LimparTela limpa = new LimparTela();
+                limpa.Limpar(this);
                 txtnDespesa.Focus();
 
             }
@@ -127,6 +122,7 @@ namespace Login.view
                cbTipoDespesa.Text = listaCadDespesa1[ponteiro].TipoDespesa;
                 txtnValor.Text = listaCadDespesa1[ponteiro].Valor;
                 txtnObs.Text = listaCadDespesa1[ponteiro].Observação;
+                cbCondominio.Text = listaCadDespesa1[ponteiro].Condominio;
             }
         }
 

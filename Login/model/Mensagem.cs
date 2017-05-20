@@ -33,8 +33,8 @@ namespace Login
         public void salvando()
         {
 
-            string texto = " Cadastro salvo com sucesso! ";
-            string titulo = "**  SALVO **";
+            string texto = "Dados inseridos com sucesso! ";
+            string titulo = "** SALVO **";
             if (MessageBox.Show(texto, titulo, MessageBoxButtons.OK) == DialogResult.Yes)
             {
                 Application.Exit();
